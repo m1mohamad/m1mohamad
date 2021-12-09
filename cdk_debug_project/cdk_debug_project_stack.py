@@ -1,7 +1,8 @@
 from aws_cdk import (
     core as cdk
-    # aws_sqs as sqs,
+    aws_sqs.core as sqs,
 )
+import boto3
 
 # For consistency with other languages, `cdk` is the preferred import name for
 # the CDK's core module.  The following line also imports it as `core` for use
@@ -18,7 +19,6 @@ class CdkDebugProjectStack(cdk.Stack):
         # The code that defines your stack goes here
 
         # example resource
-        # queue = sqs.Queue(
-        #     self, "CdkDebugProjectQueue",
-        #     visibility_timeout=cdk.Duration.seconds(300),
-        # )
+        queue = sqs.Queue(self, "CdkDebugProjectQueue",visibility_timeout=cdk.Duration.seconds(300),)
+
+
